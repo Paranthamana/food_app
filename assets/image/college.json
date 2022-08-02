@@ -1,0 +1,61 @@
+{
+"status": 200,
+"message": "Fee Details Fetched Successfully...!",
+"data": [{
+"college": "KG College of Arts and Science",
+"address": "coimbatore - 641035",
+"fee_type": "Semester Fees",
+"receipt_date": "28-09-2021",
+"receipt_number": "28102021124",
+"semester": "I",
+"course": "BCOM CA",
+"payment_mode": "Online Payment",
+"total_amount": "₹ 15,000",
+"fees_summary": [
+
+
+{
+"fee_heading": "Exam Fees",
+"amount": "₹ 5,000"
+},
+
+{
+"fee_heading": "Sem Fees",
+"amount": "₹ 4,000"
+},
+
+{
+"fee_heading": "Hostel Fees",
+"amount": "₹ 6,000"
+}
+]
+},
+{
+"college": "KG College of Arts and Science",
+"address": "coimbatore - 641035",
+"fee_type": "Semester Fees",
+"receipt_date": "28-09-2021",
+"receipt_number": "28102021124",
+"semester": "I",
+"course": "BCOM CA",
+"payment_mode": "Online Payment",
+"total_amount": "₹ 15,000",
+"fees_summary": [
+
+{
+"fee_heading": "Exam Fees",
+"amount": "₹ 5,000"
+},
+
+{
+"fee_heading": "Sem Fees",
+"amount": "₹ 4,000"
+},
+
+{
+"fee_heading": "Hostel Fees",
+"amount": "₹ 6,000"
+}
+]
+}]
+}
