@@ -8,6 +8,10 @@
         android:label="OnTabee"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+       <!--<meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDqOsDk_n3Ehi0&#45;&#45;K41Sr5opvdMFsWH4MA"/>-->
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyCocALgAiwqZTp8goZrYXBXufeRm_efxjE"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

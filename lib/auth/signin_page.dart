@@ -31,15 +31,15 @@ class SignInPage extends StatelessWidget {
       } else if(password.length<6){
         showCustomSnackBar("Password can not be less than six characters", title: "Password");
       } else{
-        //Get.toNamed(RouteHelper.getInitial());
-        authController.login(name, password).then((status){
+        Get.toNamed(RouteHelper.getInitial());
+        /*authController.login(name, password).then((status){
           if(status.isSuccess){
             //showCustomSnackBar("Login Success.", title: "Great.!");
             Get.toNamed(RouteHelper.getInitial());
           } else{
             showCustomSnackBar(status.message);
           }
-        });
+        });*/
       }
 
     }
@@ -75,7 +75,7 @@ class SignInPage extends StatelessWidget {
                     Text(
                       "Sign In",
                       style: TextStyle(
-                          fontSize: Dimensions.font20*3+Dimensions.font20/2,
+                          fontSize: Dimensions.font16*2+Dimensions.font20/2,
                           fontWeight: FontWeight.bold,
                           color: AppColors.mainBlackColor
                       ),
@@ -104,7 +104,7 @@ class SignInPage extends StatelessWidget {
                     text: TextSpan(
                       //recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
                         text: "forgot password?",
-                        style: TextStyle(color: Colors.grey[500],fontSize: Dimensions.font26)
+                        style: TextStyle(color: Colors.grey[500],fontSize: Dimensions.font20)
                     ),),
                   SizedBox(width: Dimensions.width30),
                 ],
@@ -126,7 +126,7 @@ class SignInPage extends StatelessWidget {
                   child: Center(
                       child: BigText(
                         text: "Sign In",
-                        size: Dimensions.font20+Dimensions.font20/2,
+                        size: Dimensions.font16+Dimensions.font20/2,
                         color: Colors.white,)),
                 ),
               ),
@@ -137,12 +137,12 @@ class SignInPage extends StatelessWidget {
                 text: TextSpan(
                   //recognizer: TapGestureRecognizer()..onTap=()=>Get.back(),
                     text: "Don't have an account?",
-                    style: TextStyle(color: Colors.grey[500],fontSize: Dimensions.font26),
+                    style: TextStyle(color: Colors.grey[500],fontSize: Dimensions.font20),
                     children: [
                       TextSpan(
                           recognizer: TapGestureRecognizer()..onTap=()=>Get.to(()=>SignUpPage(), transition: Transition.downToUp),
                           text: " Create",
-                          style: TextStyle(color: AppColors.mainBlackColor,fontSize: Dimensions.font26, fontWeight: FontWeight.bold))
+                          style: TextStyle(color: AppColors.mainBlackColor,fontSize: Dimensions.font20, fontWeight: FontWeight.bold))
                     ]
                 ),
               ),

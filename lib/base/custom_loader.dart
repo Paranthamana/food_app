@@ -12,8 +12,8 @@ class CustomLoader extends StatelessWidget {
     //print("loading ...."+Get.find<AuthController>().isLoading.toString());
     return Center(
       child: Container(
-        height: Dimensions.height20*5,
-        width: Dimensions.height20*5,
+        height: Dimensions.height20*3,
+        width: Dimensions.height20*3,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(Dimensions.height20*5/2),
           color: AppColors.appAccentColor

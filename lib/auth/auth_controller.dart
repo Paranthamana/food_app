@@ -13,38 +13,38 @@ class AuthController extends GetxController implements GetxService{
   bool _isLoading = false;
   bool get isLoading => _isLoading;
 
- Future<SignUpResponseModel> registration(SignUpBody signUpBody) async {
+ Future<ResponseModel> registration(SignUpBody signUpBody) async {
     _isLoading = true;
     update();
     Response response = await authRepo.registration(signUpBody);
-    late SignUpResponseModel signUpResponseModel;
+    late ResponseModel signUpResponseModel;
 
     if(response.statusCode == 200){
         authRepo.saveUserToken(response.body["token"]);
-        signUpResponseModel = SignUpResponseModel(true, response.body['token']);
+        signUpResponseModel = ResponseModel(true, response.body['token']);
     } else{
-      signUpResponseModel = SignUpResponseModel(true, response.statusText!);
+      signUpResponseModel = ResponseModel(true, response.statusText!);
     }
     _isLoading =false;
     update();
     return signUpResponseModel;
   }
 
-  Future<SignUpResponseModel> login(String name, String passowrd) async {
+  Future<ResponseModel> login(String name, String passowrd) async {
   //  print('getting token');
    // print(authRepo.getUserToken().toString());
     _isLoading = true;
     update();
     Response response = await authRepo.login(name, passowrd);
-    late SignUpResponseModel signUpResponseModel;
+    late ResponseModel signUpResponseModel;
 
     if(response.statusCode == 200){
       //print('Backend token');
       authRepo.saveUserToken(response.body["token"]);
       print(response.body["token"].toString());
-        signUpResponseModel = SignUpResponseModel(true, response.body['token']);
+        signUpResponseModel = ResponseModel(true, response.body['token']);
     } else{
-      signUpResponseModel = SignUpResponseModel(false, response.statusText!);
+      signUpResponseModel = ResponseModel(false, response.statusText!);
     }
     _isLoading =false;
     update();
