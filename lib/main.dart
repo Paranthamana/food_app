@@ -7,6 +7,7 @@ import 'package:foodapp/pages/cart/cart_page.dart';
 import 'package:foodapp/pages/home/main_food_page.dart';
 import 'package:foodapp/pages/splash/splash_page.dart';
 import 'package:foodapp/routes/route_helper.dart';
+import 'package:foodapp/utils/colors.dart';
 import 'package:get/get.dart';
 
 import 'auth/sign_up_page.dart';
@@ -33,6 +34,9 @@ class MyApp extends StatelessWidget {
           //home: SplashScreen(),
           initialRoute: RouteHelper.getSplashPage(),
           getPages: RouteHelper.routes,
+          theme: ThemeData(
+            primaryColor: AppColors.mainColor
+          ),
         );
       });
     });

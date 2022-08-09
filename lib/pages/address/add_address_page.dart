@@ -3,6 +3,7 @@ import 'package:foodapp/auth/auth_controller.dart';
 import 'package:foodapp/controller/location_controller.dart';
 import 'package:foodapp/controller/user_controller.dart';
 import 'package:foodapp/models/address_model.dart';
+import 'package:foodapp/pages/address/pick_address_map.dart';
 import 'package:foodapp/routes/route_helper.dart';
 import 'package:foodapp/utils/colors.dart';
 import 'package:foodapp/utils/dimensions.dart';
@@ -37,6 +38,14 @@ class _AddAddressPageState extends State<AddAddressPage> {
       Get.find<UserController>().getUserInfo();
     }
     if(Get.find<LocationController>().addressList.isNotEmpty){
+
+      if(Get.find<LocationController>().getUserAddressFromLocalStorage()==""){
+          Get.find<LocationController>().saveUserAddress(
+              Get.find<LocationController>()
+                  .addressList
+                  .last);
+      }
+
       Get.find<LocationController>().getUserAddress();
       _cameraPosition = CameraPosition(target: LatLng(
         double.parse(Get.find<LocationController>().getAddress['latitude']),
@@ -92,7 +101,16 @@ class _AddAddressPageState extends State<AddAddressPage> {
                   ),
                   child: Stack(
                     children: [
-                      GoogleMap(initialCameraPosition: CameraPosition(target: _initialPosition,zoom: 17),
+                      GoogleMap(initialCameraPosition:
+                      CameraPosition(target: _initialPosition,zoom: 17),
+                        onTap: (latlng){
+                            Get.toNamed(RouteHelper.getPickAddressMapPage(),
+                                arguments: PickAddressMap(fromAddress: true,
+                                  fromSignup: false,
+                                  googleMapController: locationController.mapController,
+                                )
+                            );
+                        },
                         zoomControlsEnabled: false,
                         compassEnabled: false,
                         indoorViewEnabled: true,

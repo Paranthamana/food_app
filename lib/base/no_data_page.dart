@@ -7,7 +7,7 @@ class NoDataPage extends StatelessWidget {
   final String imgPath;
 
   const NoDataPage({Key? key, required this.text,
-    this.imgPath="assets/image/cart_empty.PNG"}) : super(key: key);
+    this.imgPath="assets/image/cart_empty.png"}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
