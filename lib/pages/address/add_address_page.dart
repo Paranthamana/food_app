@@ -120,7 +120,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                           locationController.setAddressTypeIndex(index);
                       },
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: Dimensions.width20+2, vertical: Dimensions.height10),
+                        padding: EdgeInsets.symmetric(horizontal: Dimensions.width20, vertical: Dimensions.height10),
                           margin: EdgeInsets.only(right: Dimensions.width10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(Dimensions.radius20/4),
